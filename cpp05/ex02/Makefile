@@ -2,14 +2,17 @@ NAME			=	a.out
 SRCS			=	main.cpp\
 					Bureaucrat.cpp\
 					Form.cpp\
-					RobotomyRequestForm.cpp\
 					PresidentialPardonForm.cpp\
+					RobotomyRequestForm.cpp\
 					ShrubberyCreationForm.cpp
 OBJS_DIR		=	./objs
 OBJS			=	$(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
+DEPS			=	$(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.d))
 
-CXX				=	clang++
+CXX				=	c++
+#CXX				=	clang++
 CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS		+=	-MMD -MP
 #CXXFLAGS		+=	-g -fsanitize=address
 RM				=	rm -f
 
@@ -20,14 +23,16 @@ all				:	$(NAME)
 $(NAME)			:	$(OBJS)
 					$(CXX) $(OBJS) $(CXXFLAGS) -o $@
 
-$(OBJS_DIR)/%.o	:	%.cpp
+$(OBJS_DIR)/%.o:	%.cpp
 					@[ -d $(OBJS_DIR) ]
 					$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean			:
-					$(RM) $(OBJS)
+					$(RM) $(OBJS) $(DEPS)
 
-fclean			:
-					$(RM) $(OBJS) $(NAME) 
+fclean			:	clean
+					$(RM) $(NAME)
 
 re				:	fclean all
+
+-include		$(DEPS)

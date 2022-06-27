@@ -66,6 +66,6 @@ class Form
 };
 
 std::ostream &		operator<<( std::ostream & o, Form const & i);
-int					gradeCheck( int grade, std::string kind );
+int					gradeCheck( int grade );
 
 #endif

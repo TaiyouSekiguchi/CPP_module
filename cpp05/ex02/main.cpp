@@ -5,68 +5,68 @@
 
 int	main()
 {
-	std::srand( time( NULL ) );
-
-	Bureaucrat	ceo( "Musk", 1 );
-	std::cout << std::endl;
-
-	ShrubberyCreationForm	scf( "home" );
-
-	ceo.signForm( scf );
-
-	ceo.executeForm( scf );
-
-
-	return (0);
-
-
-
-	
-	/*
-	std::srand( time( NULL ) );
-
+	std::cout << "############### BUREAUCRAT ##############" << std::endl;
 	Bureaucrat	ceo( "Musk", 1 );
 	Bureaucrat	manager( "Bob", 20 );
 	Bureaucrat	partner( "Steph", 80 );
 	Bureaucrat	etc( "etc", 150 );
+	std::cout << "#########################################" << std::endl;
 
+	std::cout << "\n###############    FORM    ##############" << std::endl;
+	ShrubberyCreationForm	scf( "home" );
 	RobotomyRequestForm		rrf( "Takahashi" );
+	PresidentialPardonForm	ppf( "Marvin" );
+	PresidentialPardonForm	not_sign_ppf( "sunsun" );
+	std::cout << "#########################################" << std::endl;
 
-	etc.signForm( rrf );
-	manager.signForm( rrf );
+	std::cout << "\n##############   SIGN    ##############" << std::endl;
+	try
+	{
+		ceo.signForm( scf );
+		ceo.signForm( rrf );
+		ceo.signForm( ppf );
+	}
+	catch ( std::exception & e )
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "#######################################" << std::endl;
 
-	std::cout << rrf << std::endl;
+	std::cout << "\n##############   EXEC    ##############" << std::endl;
+	try
+	{
+		std::cout << "[ SCF ]" << std::endl;
+		manager.executeForm( scf );
+		std::cout << std::endl;
 
-	partner.executeForm( rrf );
-	ceo.executeForm( rrf );
-	*/
+		std::cout << "[ RRF ]" << std::endl;
+		manager.executeForm( rrf );
+		std::cout << std::endl;
 
-	/*
-	Bureaucrat	ceo( "Musk", 1 );
-	Bureaucrat	manager( "Bob", 20 );
-	Bureaucrat	partner( "Steph", 80 );
-	Bureaucrat	etc( "A", 150 );
+		std::cout << "[ PPF ]" << std::endl;
+		manager.executeForm( ppf );
+		std::cout << std::endl;
+	}
+	catch ( std::exception & e )
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
+	try
+	{
+		std::cout << "[ PPF ]" << std::endl;
+		ceo.executeForm( ppf );
+		std::cout << std::endl;
 
-	std::cout << std::endl;
-
-	Form		high( "High", 1, 1 );
-	Form		middle( "Middle", 100, 100 );
-	Form		low( "Low", 150, 150 );
-
-	std::cout << std::endl;
-
-	std:: cout << high << std::endl;
-	std:: cout << middle << std::endl;
-	std:: cout << low << std::endl;
-
-	std::cout << std::endl;
-
-	ceo.executeForm( high );
-	manager.signForm( high );
-	ceo.signForm( high );
-	manager.executeForm( high );
-	ceo.executeForm( high );
+		std::cout << "[ PPF ]" << std::endl;
+		ceo.executeForm( not_sign_ppf );
+		std::cout << std::endl;
+	}
+	catch ( std::exception & e )
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "#######################################" << std::endl;
 
 	return ( 0 );
-	*/
 }

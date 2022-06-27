@@ -2,6 +2,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <fstream>
+# include <cstdlib>
 # include "Form.hpp"
 
 class ShrubberyCreationForm : public Form
