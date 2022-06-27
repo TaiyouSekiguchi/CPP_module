@@ -14,15 +14,14 @@ Form::Form( void )
 Form::Form( std::string name, int signGrade, int execGrade )
 	: name( name )
 	, sign( false )
-	, signGrade( gradeCheck( signGrade, "signGrade" ) )
-	, execGrade( gradeCheck( execGrade, "execGrade" ) )
+	, signGrade( gradeCheck( signGrade ) )
+	, execGrade( gradeCheck( execGrade ) )
 {
 	std::cout << "Form Parametric Constructor called" << std::endl;
 
 	return ;
 }
 
-/*
 Form::Form( Form const & src )
 	: name( src.getName() )
 	, sign( false )
@@ -34,7 +33,6 @@ Form::Form( Form const & src )
 
 	return ;
 }
-*/
 
 Form::~Form( void )
 {
@@ -43,7 +41,6 @@ Form::~Form( void )
 	return ;
 }
 
-/*
 Form &	Form::operator=( Form const & rhs )
 {
 	std::cout << "Form Assignment operator called" << std::endl;
@@ -53,7 +50,6 @@ Form &	Form::operator=( Form const & rhs )
 
 	return *this;
 }
-*/
 
 const std::string	Form::getName( void ) const
 {
@@ -89,19 +85,11 @@ std::ostream &		operator<<( std::ostream & o, Form const & i )
 	return o;
 }
 
-int		gradeCheck( int grade, std::string kind )
+int		gradeCheck( int grade )
 {
-	try
-	{
-		if ( grade < 1 )
-			throw ( Form::GradeTooHighException() );
-		else if ( grade > 150 )
-			throw ( Form::GradeTooLowException() );
-		return ( grade );
-	}
-	catch ( std::exception& e )
-	{
-		std::cerr << "[ " << kind << " ] "<< e.what() << " Set lowest grade [ 150 ]." << std::endl;
-		return ( 150 );
-	}
+	if ( grade < 1 )
+		throw ( Form::GradeTooHighException() );
+	else if ( grade > 150 )
+		throw ( Form::GradeTooLowException() );
+	return ( grade );
 }

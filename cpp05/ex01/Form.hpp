@@ -49,12 +49,12 @@ class Form
 
 		const std::string	name;
 		bool				sign;
-		int			signGrade;
-		int			execGrade;
+		const int			signGrade;
+		const int			execGrade;
 
 };
 
 std::ostream &		operator<<( std::ostream & o, Form const & i);
-int					gradeCheck( int grade, std::string kind );
+int					gradeCheck( int grade );
 
 #endif

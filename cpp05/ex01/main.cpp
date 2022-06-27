@@ -2,36 +2,75 @@
 
 int	main()
 {
+	std::cout << "########## BUREAUCRAT ##########" << std::endl;
 	Bureaucrat	ceo( "Musk", 1 );
 	Bureaucrat	manager( "Bob", 20 );
 	Bureaucrat	partner( "Steph", 80 );
-	Bureaucrat	etc( "A", 150 );
+	Bureaucrat	etc( "etc", 150 );
+	std::cout << "################################" << std::endl;
 
-	Form		high1( "High", 1, 1 );
-	Form		high2( "High", 1, 1 );
-	Form		middle( "Middle", 100, 100 );
-	Form		low( "Low", 150, 150 );
-	Form		tooHigh( "TooHigh", -42, -42 );
-	Form		tooLow( "TooLow", 200, 200 );
+	std::cout << "\n########## FORM SUCCESS ##########" << std::endl;
 
-	std:: cout << high1 << std::endl;
-	std:: cout << middle << std::endl;
-	std:: cout << low << std::endl;
-	std:: cout << tooHigh << std::endl;
-	std:: cout << tooLow << std::endl;
+	try
+	{
+		Form	high( "High", 1, 1 );
+		Form	middle( "Middle", 100, 100 );
+		Form	low( "Low", 150, 150 );
 
-	//Error ( copy is forbbiden )
-	//Form		middleCopy( middle );
-	//middle = high;
+		std:: cout << high << std::endl;
+		ceo.signForm( high );
+		std:: cout << high << "\n" << std::endl;
 
-	ceo.signForm( high1 );
-	std:: cout << high1 << std::endl;
+		std:: cout << middle << std::endl;
+		manager.signForm( middle );
+		std:: cout << middle << "\n" << std::endl;
 
-	manager.signForm( high2 );
-	std:: cout << high2 << std::endl;
+		std:: cout << low << std::endl;
+		etc.signForm( low );
+		std:: cout << low << "\n" << std::endl;
+	}
+	catch ( std::exception & e )
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
+	std::cout << "##################################" << std::endl;
 
-	manager.signForm( middle );
-	std:: cout << middle << std::endl;
+	std::cout << "\n######## FORM EXCEPTION #########" << std::endl;
+
+	try
+	{
+		Form	tooHigh( "TooHigh", -42, -42 );
+	}
+	catch ( std::exception & e )
+	{
+		std::cerr << "Form tooHigh " << e.what() << "\n" << std::endl;
+	}
+
+	try
+	{
+		Form	tooLow( "TooLow", 200, 200 );
+	}
+	catch ( std::exception & e )
+	{
+		std::cerr << "Form tooLow " << e.what() << "\n" << std::endl;
+	}
+
+	try
+	{
+		Form	middle( "Middle", 100, 100 );
+
+		std:: cout << middle << std::endl;
+		etc.signForm( middle );
+		std:: cout << middle << std::endl;
+
+	}
+	catch ( std::exception & e )
+	{
+		std::cerr << "etc " << e.what() << "\n" << std::endl;
+	}
+	std::cout << "#################################" << std::endl;
+
 
 	return ( 0 );
 }
