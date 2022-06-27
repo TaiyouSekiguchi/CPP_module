@@ -83,9 +83,10 @@ Form *	Intern::makeForm( std::string formName, std::string target )
 	if ( index == -1 )
 	{
 		std::cerr << "Error\nInvalid form name." << std::endl;
-		std::exit( EXIT_FAILURE );
+		return ( NULL );
 	}
 	retForm = newForm( target, index );
+	std::cout << "Intern creates " << formName << std::endl;
 
 	return ( retForm );
 }

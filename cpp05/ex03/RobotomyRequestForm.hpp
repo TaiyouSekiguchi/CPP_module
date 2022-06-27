@@ -2,6 +2,8 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include "Form.hpp"
+# include <cstdlib>
+# include <ctime>
 
 class RobotomyRequestForm : public Form
 {
@@ -13,7 +15,7 @@ class RobotomyRequestForm : public Form
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		virtual ~RobotomyRequestForm( void );
 
-		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
+		RobotomyRequestForm &	operator=( RobotomyRequestForm const & rhs );
 
 		std::string		getTarget( void ) const;
 		virtual void	action( void ) const ;

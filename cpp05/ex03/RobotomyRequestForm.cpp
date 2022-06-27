@@ -5,6 +5,7 @@ RobotomyRequestForm::RobotomyRequestForm( void )
 	, target( "John" )
 {
 	std::cout << "RRF Default Constructor called" << std::endl;
+	std::srand( std::time( NULL ) );
 
 	return ;
 }
@@ -14,6 +15,7 @@ RobotomyRequestForm::RobotomyRequestForm( std::string target )
 	, target( target )
 {
 	std::cout << "RRF Parametric Constructor called" << std::endl;
+	std::srand( std::time( NULL ) );
 
 	return ;
 }
@@ -22,6 +24,7 @@ RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & src )
 	: Form( "RobotomyRequestForm", 72, 45 )
 {
 	std::cout << "RRF Copy Constructor called" << std::endl;
+	std::srand( std::time( NULL ) );
 	*this = src;
 
 	return ;
@@ -55,11 +58,11 @@ void	RobotomyRequestForm::action( void ) const
 	std::cout << "Robotomy START." << std::endl;
 	std::cout << "Gagagagagagagaga!!" << std::endl;
 
-	int	num = rand() % 2;
+	int	num = std::rand() % 2;
 	if ( num )
-		std::cout << this->target << "Robotomy SUCCESS!!" << std::endl;
+		std::cout << this->target << " Robotomy SUCCESS!!" << std::endl;
 	else
-		std::cout << this->target << "Robotomy FAIL!!" << std::endl;
+		std::cout << this->target << " Robotomy FAIL!!" << std::endl;
 
 	return ;
 }
