@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CHAR	Converter.hpp	/^			CHAR,$/;"	e	enum:Converter::__anon1
+CONVERTER_HPP	Converter.hpp	/^# define CONVERTER_HPP$/;"	d
+CXX	Makefile	/^CXX				=	clang++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98$/;"	m
+Converter	Converter.cpp	/^Converter::Converter( Converter const & src )$/;"	f	class:Converter
+Converter	Converter.cpp	/^Converter::Converter( std::string argv )$/;"	f	class:Converter
+Converter	Converter.cpp	/^Converter::Converter( void )$/;"	f	class:Converter
+Converter	Converter.hpp	/^class Converter$/;"	c
+DOUBLE	Converter.hpp	/^			DOUBLE,$/;"	e	enum:Converter::__anon1
+FLOAT	Converter.hpp	/^			FLOAT,$/;"	e	enum:Converter::__anon1
+INT	Converter.hpp	/^			INT,$/;"	e	enum:Converter::__anon1
+NAME	Makefile	/^NAME			=	Converter$/;"	m
+NONE	Converter.hpp	/^			NONE = 0,$/;"	e	enum:Converter::__anon1
+OBJS	Makefile	/^OBJS			=	$(addprefix $(OBJS_DIR)\/, $(SRCS:.cpp=.o))$/;"	m
+OBJS_DIR	Makefile	/^OBJS_DIR		=	.\/objs$/;"	m
+RM	Makefile	/^RM				=	rm -f$/;"	m
+SRCS	Makefile	/^SRCS			=	main.cpp\\$/;"	m
+c	Converter.hpp	/^		char			c;$/;"	m	class:Converter
+convertActualType	Converter.cpp	/^void	Converter::convertActualType( void )$/;"	f	class:Converter
+convertExplicitly	Converter.cpp	/^void	Converter::convertExplicitly( void )$/;"	f	class:Converter
+d_num	Converter.hpp	/^		double			d_num;$/;"	m	class:Converter
+detectType	Converter.cpp	/^void	Converter::detectType( void )$/;"	f	class:Converter
+displayChar	Converter.cpp	/^void	Converter::displayChar( void ) const$/;"	f	class:Converter
+displayDouble	Converter.cpp	/^void	Converter::displayDouble( void ) const$/;"	f	class:Converter
+displayFloat	Converter.cpp	/^void	Converter::displayFloat( void ) const$/;"	f	class:Converter
+displayInt	Converter.cpp	/^void	Converter::displayInt( void ) const$/;"	f	class:Converter
+displayResult	Converter.cpp	/^void	Converter::displayResult( void ) const$/;"	f	class:Converter
+f_num	Converter.hpp	/^		float			f_num;$/;"	m	class:Converter
+getC	Converter.cpp	/^char			Converter::getC( void ) const$/;"	f	class:Converter
+getDnum	Converter.cpp	/^double			Converter::getDnum( void ) const$/;"	f	class:Converter
+getFnum	Converter.cpp	/^float			Converter::getFnum( void ) const$/;"	f	class:Converter
+getInum	Converter.cpp	/^int				Converter::getInum( void ) const$/;"	f	class:Converter
+getParam	Converter.cpp	/^std::string		Converter::getParam( void ) const$/;"	f	class:Converter
+getType	Converter.cpp	/^Converter::t_type	Converter::getType( void ) const$/;"	f	class:Converter
+i_num	Converter.hpp	/^		int				i_num;$/;"	m	class:Converter
+main	main.cpp	/^int	main( int argc, char *argv[] )$/;"	f
+operator =	Converter.cpp	/^Converter &	Converter::operator=( Converter const & rhs )$/;"	f	class:Converter
+param	Converter.hpp	/^		std::string		param;$/;"	m	class:Converter
+t_type	Converter.hpp	/^		}	t_type;$/;"	t	class:Converter	typeref:enum:Converter::__anon1
+type	Converter.hpp	/^		t_type			type;$/;"	m	class:Converter
+~Converter	Converter.cpp	/^Converter::~Converter( void )$/;"	f	class:Converter
