@@ -32,61 +32,35 @@ Intern &	Intern::operator=( Intern const & rhs )
 	return *this;
 }
 
-std::string forms[3] = { "shrubbery creation", "robotomy request", "presidential pardon" };
+static Form* newShrubberyCreationForm( const std::string& target )
+{ return ( new ShrubberyCreationForm( target ) ); }
 
-int		Intern::getIndex( std::string & formName )
+static Form* newRobotomyRequestForm( const std::string& target )
+{ return ( new RobotomyRequestForm( target ) ); }
+
+static Form* newPresidentialPardonForm( const std::string& target )
+{ return ( new PresidentialPardonForm( target ) ); }
+
+Form *	Intern::makeForm( const std::string formName, const std::string target )
 {
-	int		index = -1;
+	const std::string	forms[3] = {
+		"shrubbery creation",
+		"robotomy request",
+		"presidential pardon" };
 
-	for ( int i = 0; i < 3; i++ )
+	Form *	(* const newForms[3])(const std::string& target) = {
+		newShrubberyCreationForm,
+		newRobotomyRequestForm,
+		newPresidentialPardonForm };
+
+	for (int i = 0; i < 3; i++)
 	{
-		if ( forms[i] == formName )
+		if (forms[i] == formName)
 		{
-			index = i;
-			break ;
+			std::cout << "Intern creates " << formName << std::endl;
+			return (newForms[i](target));
 		}
 	}
-
-	return ( index );
-}
-
-Form *	Intern::newForm( std::string target, int index )
-{
-	Form *	retForm;
-
-	switch ( index )
-	{
-		case 0:
-			retForm = new ShrubberyCreationForm( target );
-			break ;
-		case 1:
-			retForm = new RobotomyRequestForm( target );
-			break ;
-		case 2:
-			retForm = new PresidentialPardonForm( target );
-			break ;
-		default:
-			std::cerr << "What's happen!?" << std::endl;
-			retForm = NULL;
-			break ;
-	}
-
-	return ( retForm );
-}
-
-Form *	Intern::makeForm( std::string formName, std::string target )
-{
-	Form *	retForm;
-	int		index;
-
-	index = getIndex( formName );
-	if ( index == -1 )
-	{
-		std::cerr << "Error\nInvalid form name." << std::endl;
-		return ( NULL );
-	}
-	retForm = newForm( target, index );
-	std::cout << "Intern creates " << formName << std::endl;
-
-	return ( retForm );
+	std::cerr << "Error\nInvalid form name." << std::endl;
+	return ( NULL );
 }

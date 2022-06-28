@@ -4,7 +4,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 
-
 int	main()
 {
 	std::cout << "############### BUREAUCRAT ##############" << std::endl;

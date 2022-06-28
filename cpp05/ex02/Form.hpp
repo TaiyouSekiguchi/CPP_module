@@ -55,9 +55,6 @@ class Form
 
 	private:
 
-		//Form( Form const & src );
-		//Form &	operator=( Form const & rhs );
-
 		const std::string	name;
 		bool				sign;
 		int			signGrade;

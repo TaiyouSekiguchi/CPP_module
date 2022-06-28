@@ -21,12 +21,7 @@ class Intern
 
 		Intern & operator=( Intern const & rhs );
 
-		Form *	makeForm( std::string formName, std::string target);
-
-	private:
-
-		int		getIndex( std::string & formName );
-		Form *	newForm( std::string target, int index );
+		Form *	makeForm( const std::string formName, const std::string target);
 
 };
 

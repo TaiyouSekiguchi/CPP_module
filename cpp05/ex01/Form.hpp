@@ -12,10 +12,10 @@ class Form
 
 		Form( void );
 		Form( std::string name, int signGrade, int execGrade );
-		//Form( Form const & src );
+		Form( Form const & src );
 		~Form( void );
 
-		//Form &	operator=( Form const & rhs );
+		Form &	operator=( Form const & rhs );
 
 		const std::string	getName( void ) const;
 		bool				getSign( void ) const;
@@ -43,9 +43,6 @@ class Form
 		};
 
 	private:
-
-		Form( Form const & src );
-		Form &	operator=( Form const & rhs );
 
 		const std::string	name;
 		bool				sign;

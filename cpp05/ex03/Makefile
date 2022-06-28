@@ -10,11 +10,11 @@ OBJS_DIR		=	./objs
 OBJS			=	$(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 DEPS			=	$(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.d))
 
-#CXX				=	c++
-CXX				=	clang++
+CXX				=	c++
+#CXX				=	clang++
 CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98
 CXXFLAGS		+=	-MMD -MP
-CXXFLAGS		+=	-g -fsanitize=address
+#CXXFLAGS		+=	-g -fsanitize=address
 RM				=	rm -f
 
 .PHONY			:	all clean fclean re
