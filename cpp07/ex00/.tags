@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CXX	Makefile	/^CXX				=	c++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98$/;"	m
+NAME	Makefile	/^NAME			=	a.out$/;"	m
+OBJS	Makefile	/^OBJS			=	$(addprefix $(OBJS_DIR)\/, $(SRCS:.cpp=.o))$/;"	m
+OBJS_DIR	Makefile	/^OBJS_DIR		=	.\/objs$/;"	m
+RM	Makefile	/^RM				=	rm -f$/;"	m
+SRCS	Makefile	/^SRCS			=	main.cpp$/;"	m
+WHATEVER_HPP	whatever.hpp	/^# define WHATEVER_HPP$/;"	d
+main	main.cpp	/^int main( void ) $/;"	f
+max	whatever.hpp	/^const T &		max( T const & a, T const & b )$/;"	f
+min	whatever.hpp	/^const T &		min( T const & a, T const & b )$/;"	f
+swap	whatever.hpp	/^void	swap( T& a, T& b )$/;"	f

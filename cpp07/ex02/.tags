@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ARRAY_HPP	Array.hpp	/^# define ARRAY_HPP$/;"	d
+Array	Array.hpp	/^class Array$/;"	c
+CXX	Makefile	/^CXX				=	clang++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98$/;"	m
+MAX_VAL	subject_main.cpp	/^#define MAX_VAL /;"	d	file:
+NAME	Makefile	/^NAME			=	a.out$/;"	m
+OBJS	Makefile	/^OBJS			=	$(addprefix $(OBJS_DIR)\/, $(SRCS:.cpp=.o))$/;"	m
+OBJS_DIR	Makefile	/^OBJS_DIR		=	.\/objs$/;"	m
+RM	Makefile	/^RM				=	rm -f$/;"	m
+SRCS	Makefile	/^SRCS			=	main.cpp$/;"	m
+array	Array.hpp	/^		T*				array;$/;"	m	class:Array
+arraySize	Array.hpp	/^		unsigned int	arraySize;$/;"	m	class:Array
+main	main.cpp	/^int main( void )$/;"	f
+main	subject_main.cpp	/^int main(int, char**)$/;"	f

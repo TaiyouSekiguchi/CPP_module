@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ARRAY_SIZE	main.cpp	/^#define ARRAY_SIZE /;"	d	file:
+CXX	Makefile	/^CXX				=	c++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98$/;"	m
+ITER_HPP	iter.hpp	/^# define ITER_HPP$/;"	d
+NAME	Makefile	/^NAME			=	a.out$/;"	m
+OBJS	Makefile	/^OBJS			=	$(addprefix $(OBJS_DIR)\/, $(SRCS:.cpp=.o))$/;"	m
+OBJS_DIR	Makefile	/^OBJS_DIR		=	.\/objs$/;"	m
+RM	Makefile	/^RM				=	rm -f$/;"	m
+SRCS	Makefile	/^SRCS			=	main.cpp$/;"	m
+add_one	iter.hpp	/^void	add_one( T& tmp )$/;"	f
+add_one	iter.hpp	/^void	add_one<std::string>( std::string& tmp )$/;"	f
+iter	iter.hpp	/^void	iter( T* array, size_t size, void (*f)(T&) )$/;"	f
+main	main.cpp	/^int	main( void )$/;"	f
+put	iter.hpp	/^void	put( T& tmp )$/;"	f
+put	iter.hpp	/^void	put<float>( float& tmp )$/;"	f
+toUpper	main.cpp	/^void	toUpper( char& c )$/;"	f
