@@ -3,7 +3,8 @@ SRCS			=	main.cpp
 OBJS_DIR		=	./objs
 OBJS			=	$(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 
-CXX				=	clang++
+CXX				=	c++
+#CXX				=	clang++
 CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98
 #CXXFLAGS		+=	-g -fsanitize=address
 RM				=	rm -f

@@ -66,7 +66,7 @@ template < typename T >
 T&	Array<T>::operator[]( int i )
 {
 	if ( i < 0 || static_cast<unsigned int >(i) >= this->arraySize )
-		throw std::exception();
+		throw std::out_of_range("Access to out of range.");
 
 	return ( this->array[i] );
 }
@@ -75,7 +75,7 @@ template < typename T >
 T const &	Array<T>::operator[]( int i ) const
 {
 	if ( i < 0 || static_cast<unsigned int>(i) >= this->arraySize )
-		throw std::exception();
+		throw std::out_of_range("Access to out of range.");
 
 	return ( this->array[i] );
 }

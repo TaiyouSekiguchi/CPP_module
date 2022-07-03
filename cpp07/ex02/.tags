@@ -6,7 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 ARRAY_HPP	Array.hpp	/^# define ARRAY_HPP$/;"	d
 Array	Array.hpp	/^class Array$/;"	c
-CXX	Makefile	/^CXX				=	clang++$/;"	m
+CXX	Makefile	/^CXX				=	c++$/;"	m
 CXXFLAGS	Makefile	/^CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98$/;"	m
 MAX_VAL	subject_main.cpp	/^#define MAX_VAL /;"	d	file:
 NAME	Makefile	/^NAME			=	a.out$/;"	m

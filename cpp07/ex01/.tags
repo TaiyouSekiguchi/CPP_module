@@ -16,7 +16,8 @@ SRCS	Makefile	/^SRCS			=	main.cpp$/;"	m
 add_one	iter.hpp	/^void	add_one( T& tmp )$/;"	f
 add_one	iter.hpp	/^void	add_one<std::string>( std::string& tmp )$/;"	f
 iter	iter.hpp	/^void	iter( T* array, size_t size, void (*f)(T&) )$/;"	f
+iter	iter.hpp	/^void	iter(const T* array, size_t size, void (*f)(const T&) )$/;"	f
 main	main.cpp	/^int	main( void )$/;"	f
 put	iter.hpp	/^void	put( T& tmp )$/;"	f
-put	iter.hpp	/^void	put<float>( float& tmp )$/;"	f
+put	iter.hpp	/^void	put<float>(float& tmp )$/;"	f
 toUpper	main.cpp	/^void	toUpper( char& c )$/;"	f
