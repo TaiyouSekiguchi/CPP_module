@@ -142,14 +142,46 @@ void	longestSpanExceptionTest(void)
 	std::cerr << std::endl;
 }
 
-void	rondomTest()
+void	AddRangeTest(void)
 {
-	Span	sp = Span(20000);
+	const int	set_size = 5;
+	int			array[set_size];
 
-	std::cerr << "[ rondom test ]" << std::endl;
-	sp.setRandomNumber(20000);
-	std::cout << "shortestSpan : " << sp.shortestSpan() << std::endl;
-	std::cout << "longestSpan : " << sp.longestSpan() << std::endl;
+	array[0] = 12;
+	array[1] = 42;
+	array[2] = -3;
+	array[3] = 123432;
+	array[4] = 33;
+
+	Span	sp = Span(set_size);
+	sp.addRange(array, array + set_size);
+
+	result("AddRangeTest", sp, 9, 123435);
+}
+
+void	BigTest(void)
+{
+	const int	set_size = 20000;
+	int			array[set_size];
+	int			i = 0;
+
+	std::srand( time( NULL ) );
+
+	while (i < set_size - 4)
+	{
+		int	num = std::rand() % 100000;
+		array[i] = num;
+		i++;
+	}
+	array[i++] = 100000;
+	array[i++] = 100000;
+	array[i++] = 200000;
+	array[i] = -1;
+
+	Span	sp = Span(set_size);
+	sp.addRange(array, array + set_size);
+
+	result("BigTest", sp, 0, 200001);
 }
 
 int	main( void )
@@ -160,7 +192,8 @@ int	main( void )
 	OverSizeTest();
 	shortestSpanExceptionTest();
 	longestSpanExceptionTest();
-	rondomTest();
+	AddRangeTest();
+	BigTest();
 
 	return ( 0 );
 }

@@ -4,7 +4,6 @@ Span::Span( void )
 	: sizeMax( 0 )
 {
 	//std::cout << "Span default Constructor called" << std::endl;
-	std::srand( time( NULL ) );
 	return ;
 }
 

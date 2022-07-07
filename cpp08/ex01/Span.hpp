@@ -25,10 +25,19 @@ class Span
 		unsigned int	longestSpan( void ) const;
 		void			setRandomNumber( unsigned int setSize );
 
+		template <class InputIterator>
+		void			addRange(InputIterator first, InputIterator last);
+
 	private:
 
 		std::multiset<int>	intMultiSet;
 		unsigned int		sizeMax;
 };
+
+template <class InputIterator>
+void	Span::addRange(InputIterator first, InputIterator last)
+{
+	this->intMultiSet.insert(first, last);
+}
 
 #endif
