@@ -183,6 +183,25 @@ void	AddRangeExceptionTest(void)
 		std::cerr << "catch exception!! [ OK ]" << std::endl;
 	}
 
+	try
+	{
+		array[0] = 12;
+		array[1] = 42;
+		array[2] = -3;
+		array[3] = 123432;
+		array[4] = 33;
+
+		Span	sp = Span(5);
+		sp.addRange(array + set_size, array);
+		std::cerr << "Not throw Exception [ NG ]" << std::endl;
+	}
+	catch (const char* msg)
+	{
+		std::cerr << msg << std::endl;
+		std::cerr << "catch exception!! [ OK ]" << std::endl;
+	}
+	std::cout << std::endl;
+
 	return ;
 }
 

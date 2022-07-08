@@ -38,6 +38,9 @@ class Span
 template <class InputIterator>
 void	Span::addRange(InputIterator first, InputIterator last)
 {
+	if (first > last)
+		throw ( "Wrong InputIterator !!" );
+
 	if (std::numeric_limits<std::multiset<int>::size_type>::max() - (last - first) < this->intMultiSet.size())
 		throw ( "Multiset size over !!" );
 
@@ -45,7 +48,6 @@ void	Span::addRange(InputIterator first, InputIterator last)
 		throw ( "Multiset size over !!" );
 
 	this->intMultiSet.insert(first, last);
-	std::cout << std::endl;
 }
 
 #endif
