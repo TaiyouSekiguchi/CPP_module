@@ -159,6 +159,33 @@ void	AddRangeTest(void)
 	result("AddRangeTest", sp, 9, 123435);
 }
 
+void	AddRangeExceptionTest(void)
+{
+	const int	set_size = 5;
+	int			array[set_size];
+
+	std::cerr << "[ AddRangeExceptionTest ]" << std::endl;
+	try
+	{
+		array[0] = 12;
+		array[1] = 42;
+		array[2] = -3;
+		array[3] = 123432;
+		array[4] = 33;
+
+		Span	sp = Span(3);
+		sp.addRange(array, array + set_size);
+		std::cerr << "Not throw Exception [ NG ]" << std::endl;
+	}
+	catch(const char* msg)
+	{
+		std::cerr << msg << std::endl;
+		std::cerr << "catch exception!! [ OK ]" << std::endl;
+	}
+
+	return ;
+}
+
 void	BigTest(void)
 {
 	const int	set_size = 20000;
@@ -193,6 +220,7 @@ int	main( void )
 	shortestSpanExceptionTest();
 	longestSpanExceptionTest();
 	AddRangeTest();
+	AddRangeExceptionTest();
 	BigTest();
 
 	return ( 0 );
